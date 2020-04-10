@@ -1,24 +1,34 @@
-# README
+# React with Ruby on Rails
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+### Setup
+* [Install Ruby and Rails](https://gorails.com/setup/osx/10.15-catalina)
+* [Install Postgres](https://postgresapp.com)
+* [Install the Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
+### App initialization
+```
+rails new appname --webpack=react -d=postgresql
+rails g controller pages index
+```
 
 * Database initialization
+```
+rake db:create
+rake db:migrate
+```
 
-* How to run the test suite
+* Deployment (using Heroku CLI)
+```
+git add .
+git commit -m "commit message"
+heroku create
+git push heroku master
+heroku open
+```
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Thanks to Kevin Qi for the react-piano component and to Zayne for his excellent tutorials introducing this app architecture.
